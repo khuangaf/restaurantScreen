@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>Jibi Restaurant Management System</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+
+	<!-- JS -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-animate/angular-animate.min.js"></script>
+	<script src="libs/angular-aria/angular-aria.min.js"></script>
+	<script src="libs/angular-material/angular-material.min.js"></script>
+	<script src="libs/angular-messages/angular-messages.min.js"></script>
+	
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+	
+	<!-- ANGULAR CUSTOM -->
+
+	<script src="js/app.js"></script>
+	<script src="js/controllers/MainCtrl.js"></script>
+	
+	
+	
+	
+</head>
+<body ng-app="sampleApp" ng-controller="MainController">
+<div class="container">
+	
+	<!-- HEADER -->
+	<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/">Jibi Restaruant Management System</a>
+		</div>
+		
+	</nav>
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	 <md-card md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Total Request</span>
+            <span class="md-subhead">number</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+         
+        </md-card-actions>
+      </md-card>
+      
+	
+  
+  <md-list ng-cloak="" class="listdemoListControls" >
+  	<md-list-item ng-repeat="reservation in reservations">
+    <p> {{ reservation.number }} </p>
+	<p> {{ reservation.time }} </p>
+	<div class="checkboxdemoSyncing">
+    	<md-checkbox   class="md-label" ng-model="reservation.wanted" ng-click="toggle(reservation.wanted)"></md-checkbox>
+    </div>
+  </md-list-item>
+  </md-list>
+  
+
+</div>
+</body>
+<script src='/socket.io/socket.io.js'></script>
+<script>
+    
+    
+    
+</script>
+</html>
