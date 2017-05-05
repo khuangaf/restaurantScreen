@@ -14,7 +14,7 @@ var server = require('http').Server(app);
 var request = require('request');
 var url = require('url');
 var io = require('socket.io')(server);
-var port = process.env.PORT || 8080; // set our port
+var port = process.env.PORT || 8000; // set our port
 // mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
 
 // get all data/stuff of the body (POST) parameters
@@ -33,7 +33,7 @@ io.on("connection",function(socket){
 	
 	//listen on the api
 	app.get('/api/reserve',function(req,res){
-		
+		console.log(req)
 		//parse the parameters
 		var url_parts = url.parse(req.url, true);
 		var query = url_parts.query;
@@ -41,13 +41,15 @@ io.on("connection",function(socket){
 		var time = query.time;
 		//send the reservation to front end
 		socket.emit('server',{people:people, time:time});
+		res.json({"status":"OK"});
 
 	});
 	socket.on('out',function(parameters){
-		var url ="https://young-castle-82935.herokuapp.com/api/facility"
+		var url ="http://localhost:8080/api/confirm";
 		request({url:url, qs:parameters},function(err,response, body){
 		    if(err) { console.log(err); return "error"; }
 		    console.log("Get response: " + response.statusCode);
+		    console.log(response);
 		  });
 		console.log(parameters)
 	})
