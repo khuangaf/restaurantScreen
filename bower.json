@@ -1,11 +1,12 @@
 {
   "name": "angular",
   "version": "1.0.0",
-  
   "dependencies": {
     "bootstrap": "latest",
     "angular": "latest",
     "angular-route": "latest",
-    "angular-material": "^1.1.4"
+    "angular-material": "^1.1.4",
+    "angular-socket-io": "^0.7.0",
+    "socket.io-client": "^1.7.2"
   }
 }

@@ -8,8 +8,9 @@ app.controller('MainController', function($scope, $http) {
 	    { number: 9, time:"17:00:00", wanted: false }
   	];
   	// var socket = io();
-  	var socket = io();
+  	var socket = io('http://localhost:8000');
     socket.on('server',function(message){	
+    	
 		console.log(message);
 		$scope.reservations.push({number:message.people, time:message.time, wanted:false});
 		$scope.$apply();    		
