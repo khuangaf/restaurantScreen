@@ -65,6 +65,6 @@ server.listen(port, function(){
   console.log('listening on *:' + port);
 });
 
-// module.exports.io = io;
+module.exports.io = io;
 
 exports = module.exports = app; 						// expose app
