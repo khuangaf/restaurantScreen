@@ -33,14 +33,14 @@
 	
 	<!-- HEADER -->
 	<nav class="navbar navbar-inverse">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="/">Jibi Restaruant Management System</a>
+		<div class="navbar-header" layout-align="space-between center">
+			<a class="navbar-brand"  href="/">Jibi Restaruant Management System</a>
 		</div>
 		
 	</nav>
 
 	<!-- ANGULAR DYNAMIC CONTENT -->
-	 <md-card md-theme-watch>
+	<!--  <md-card md-theme-watch>
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline">Total Request</span>
@@ -54,19 +54,25 @@
          
         </md-card-actions>
       </md-card>
-      
+       -->
 	
   
-  <md-list ng-cloak="" class="listdemoListControls" >
-  	<md-list-item ng-repeat="reservation in reservations">
-    <p> {{ reservation.number }} </p>
-	<p> {{ reservation.time }} </p>
-	<div class="checkboxdemoSyncing">
-    	<md-checkbox   class="md-label" ng-model="reservation.wanted" ng-click="toggle(reservation.wanted)"></md-checkbox>
-    </div>
-  </md-list-item>
-  </md-list>
-  
+ 
+  <div class="parent" layout="column" ng-repeat="reservation in reservations" flex>
+        <md-card>
+          
+          <md-card-content>
+            <h2>Number of People: {{reservation.number}}</h2>
+            <h2>Reservation Time: {{reservation.time}}</h2>
+            
+          </md-card-content>
+          <div class="md-actions" layout="row" layout-align="end center">
+            <md-button class="md-raised">Confirm</md-button>
+            <md-button class="md-raised md-primary">Cancel</md-button>
+            <md-button class="md-accent md-raised md-hue-2">Delete</md-button>
+          </div>
+        </md-card>
+      </div>
 
 </div>
 </body>

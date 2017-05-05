@@ -15,6 +15,7 @@ app.controller('MainController', function($scope, $http) {
 		$scope.$apply();    		
     });
 
+    $scope.users = ['Fabio', 'Leonardo', 'Thomas', 'Gabriele', 'Fabrizio', 'John', 'Luis', 'Kate', 'Max'];
     function createCORSRequest(method, url) {
 	  var xhr = new XMLHttpRequest();
 	  if ("withCredentials" in xhr) {

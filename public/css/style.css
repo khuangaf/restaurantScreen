@@ -1,9 +1,4 @@
-body { padding-top:30px; }
-.carddemoBasicUsage .card-media {
-  background-color: #999999; }
-md-card{
-	background-color: 	#ADD8E6;
-}
+
 
 .listdemoListControls md-divider {
   margin-top: 0;
@@ -49,3 +44,15 @@ md-card{
   border-style: solid;
   border-width: 1px;
   height: 100%; }
+
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px;
+}
+
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5;
+}
+
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms;
+}
