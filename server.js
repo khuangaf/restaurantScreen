@@ -33,13 +33,15 @@ io.on("connection",function(socket){
 	
 	//listen on the api
 	app.get('/api/reserve',function(req,res){
-		console.log(req)
+		// console.log(req)
 		//parse the parameters
 		var url_parts = url.parse(req.url, true);
 		var query = url_parts.query;
 		var people = query.people;
 		var time = query.time;
 		//send the reservation to front end
+		console.log(people)
+		console.log(time)
 		socket.emit('server',{people:people, time:time});
 		res.json({"status":"OK"});
 
