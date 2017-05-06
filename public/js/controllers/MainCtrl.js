@@ -26,15 +26,14 @@ angular.module('sampleApp').controller('MainController', function($scope, $http,
 
     
     
-    $scope.confirm = function(wanted){
+    $scope.confirm = function(){
     	//if originally is is not wanted, send the confirmation back to chatbot
-    	if(!wanted){
-    		console.log(wanted)
-			var params = {facility:'light', action:'turn off'};
-			socket.emit('out',params);
+    	
+		// console.log(wanted)
+		var params = {message:"Your reservation is confirmed."}
+		socket.emit('out',params);
 
-    	}
-    	if(wanted) console.log('nono')
+    	
     }
 
 

@@ -43,13 +43,9 @@ app.get('/api/reserve',function(req,res){
 	});
 io.on("connection",function(socket){
 
-	
-
-	
 	//listen on the api
-	
 	socket.on('out',function(parameters){
-		var url ="http://localhost:8080/api/confirm";
+		var url ="https://hotel-agent.herokuapp.com/api/confirm";
 		request({url:url, qs:parameters},function(err,response, body){
 		    if(err) { console.log(err); return "error"; }
 		    console.log("Get response: " + response.statusCode);
