@@ -1,4 +1,5 @@
-app.controller('MainController', function($scope, $http) {
+'use strict';
+angular.module('sampleApp').controller('MainController', function($scope, $http, socket) {
 
 	
 	$scope.reservations = [
@@ -9,9 +10,13 @@ app.controller('MainController', function($scope, $http) {
   	];
   	var currentURL = window.location.href;
   	currentURL = currentURL.substr(0,currentURL.length-1);
-  	var socket = io(currentURL);
+  	console.log(currentURL);
+	// var socket = io(currentURL);
+	// var socket = req.app.get('socketio');
+  // 	var socket = io(currentURL);
+  	
 
-  	// var socket = io('http://localhost:8000');
+  // 	// var socket = io('http://localhost:8000');
     socket.on('server',function(message){	
 
 		console.log(message);

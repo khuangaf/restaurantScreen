@@ -16,7 +16,8 @@
 	<script src="libs/angular-aria/angular-aria.min.js"></script>
 	<script src="libs/angular-material/angular-material.min.js"></script>
 	<script src="libs/angular-messages/angular-messages.min.js"></script>
-	
+
+
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 	
 	<!-- ANGULAR CUSTOM -->
@@ -39,23 +40,7 @@
 		
 	</nav>
 
-	<!-- ANGULAR DYNAMIC CONTENT -->
-	<!--  <md-card md-theme-watch>
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Total Request</span>
-            <span class="md-subhead">number</span>
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-sm card-media"></div>
-          </md-card-title-media>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-         
-        </md-card-actions>
-      </md-card>
-       -->
-	
+
   
  
   <div class="parent" layout="column" ng-repeat="reservation in reservations" flex>
@@ -69,19 +54,18 @@
           <div class="md-actions" layout="row" layout-align="end center">
             <md-button class="md-raised" ng-click="confirm(reservation.wanted)">Confirm</md-button>
             <md-button class="md-raised md-primary">Cancel</md-button>
-            <md-button class="md-accent md-raised md-hue-2">Delete</md-button>
+            <md-button class="md-warn md-raised md-hue-2">Delete</md-button>
           </div>
         </md-card>
       </div>
 
 </div>
 </body>
-<!-- <script src='/socket.io/socket.io.js'></script> -->
-<script src='libs/angular-socket-io/socket.js'></script>
-<script src='libs/socket.io-client/dist/socket.io.js'></script>
-<script>
-    
-    
-    
-</script>
+
+	<script src='libs/angular-socket-io/socket.js'></script>
+	<script src="https://cdn.socket.io/socket.io-1.7.3.js"></script>
+
+<script src='js/services/socketService.js'></script>
+
+
 </html>
