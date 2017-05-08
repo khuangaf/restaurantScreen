@@ -39,8 +39,8 @@ app.get('/api/reserve',function(req,res){
 		console.log(time)
 		io.sockets.emit('server',{people:people, time:time});
 		res.json({"status":"OK"});
-
 	});
+
 io.on("connection",function(socket){
 
 	//listen on the api
